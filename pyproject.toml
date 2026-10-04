@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "riboshift"
+version = "0.1.0"
+description = "Tools for building RiboShift benchmark tables, splits, and audits"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.0",
+  "PyYAML>=6.0",
+  "pyarrow>=15.0",
+  "rdkit",
+  "openpyxl>=3.1",
+  "requests>=2.31",
+  "python-docx>=1.1",
+]
+
+[project.scripts]
+riboshift = "riboshift.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["riboshift*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
