@@ -1,0 +1,18 @@
+{
+  "columns": [
+    "interaction_id",
+    "evidence_id",
+    "rna_id",
+    "ligand_id",
+    "interaction_label",
+    "support_level",
+    "task_family",
+    "evidence_tier",
+    "label_origin",
+    "is_legacy_binary_source",
+    "source_database"
+  ],
+  "name": "interaction_records",
+  "path": "data/tables/interaction_records.parquet",
+  "rows": 65511
+}

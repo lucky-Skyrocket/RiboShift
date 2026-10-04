@@ -1,0 +1,81 @@
+asset_root: /path/to/riboshift-assets
+seed: 42
+rna_similarity_threshold: 0.9
+rfam_mapping_path: null
+decoy_k: 10
+min_eval_rows_per_fold: 1
+min_eval_direct_decoy_groups_per_fold: 150
+split:
+  train: 0.8
+  valid: 0.1
+  test: 0.1
+sources:
+  - name: HARIBOSS
+    mode: materialized_table
+    enabled: true
+    required: true
+    task_family: direct_interaction
+    evidence_tier: structural
+    positive_only: true
+    table_path: sources/hariboss/hariboss_external.tsv
+    metadata_path: sources/hariboss/hariboss_external_metadata.csv
+    manifest_path: sources/hariboss/hariboss_external_manifest.json
+    reference: HARIBOSS
+    year: 2022
+  - name: RNALigands
+    mode: materialized_table
+    enabled: true
+    required: true
+    task_family: direct_interaction
+    evidence_tier: motif_curated
+    positive_only: true
+    table_path: sources/rnaligands/rnaligands_external.tsv
+    metadata_path: sources/rnaligands/rnaligands_external_metadata.csv
+    manifest_path: sources/rnaligands/rnaligands_external_manifest.json
+    reference: RNALigands
+    year: 2022
+  - name: ROBIN
+    mode: materialized_table
+    enabled: true
+    required: true
+    task_family: legacy_task_binary
+    evidence_tier: legacy_task_binary
+    positive_only: false
+    table_path: sources/robin/robin_external.tsv
+    reference: ROBIN
+    year: 2025
+  - name: Biosensor
+    mode: materialized_table
+    enabled: true
+    required: true
+    task_family: legacy_task_binary
+    evidence_tier: legacy_task_binary
+    positive_only: false
+    table_path: sources/biosensor/biosensor_external.tsv
+    reference: Biosensor
+    year: 2025
+  - name: R-BIND 2.0
+    mode: builder_adapter
+    enabled: true
+    required: false
+    task_family: direct_interaction
+    evidence_tier: bioactive_curated
+    positive_only: true
+    builder_type: rbind_table
+    builder_path: sources/rbind/rbind_subset.xlsx
+    sheet_name: R-BIND subset
+    reference: 10.1038/s41587-025-02942-z
+    year: 2025
+  - name: RNALID
+    mode: builder_adapter
+    enabled: true
+    required: false
+    task_family: direct_interaction
+    evidence_tier: validated_interaction
+    positive_only: true
+    builder_type: rnalid_pmc_docx
+    builder_path: sources/rnalid/rnalid_supplement.docx
+    download_url: https://pmc.ncbi.nlm.nih.gov/articles/instance/10332223/bin/KRNB_A_2231708_SM2150.docx?download=1
+    pmcid: PMC10332223
+    reference: 10.1080/15476286.2023.2231708
+    year: 2023

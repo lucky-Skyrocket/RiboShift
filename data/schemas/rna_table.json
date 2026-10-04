@@ -1,0 +1,15 @@
+{
+  "columns": [
+    "rna_id",
+    "rna_sequence",
+    "rna_structure",
+    "rna_type",
+    "rfam_id",
+    "rna_cluster_id",
+    "grouping_source",
+    "sequence_length"
+  ],
+  "name": "rna_table",
+  "path": "data/tables/rna_table.parquet",
+  "rows": 1067
+}

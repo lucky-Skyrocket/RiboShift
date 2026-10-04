@@ -1,0 +1,9 @@
+{
+  "columns": [
+    "analysis_view",
+    "interaction_id"
+  ],
+  "name": "view_annotations",
+  "path": "data/tables/view_annotations.parquet",
+  "rows": 67466
+}

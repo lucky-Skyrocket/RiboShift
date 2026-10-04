@@ -1,0 +1,45 @@
+{
+  "all_sources_benchmark_stats": {
+    "interactions": 65511,
+    "legacy_binary_rows": 63556,
+    "negatives": 58515,
+    "positives": 6996,
+    "sources": {
+      "Biosensor": 16999,
+      "HARIBOSS": 1238,
+      "R-BIND 2.0": 326,
+      "RNALigands": 391,
+      "ROBIN": 46557
+    },
+    "task_family": {
+      "direct_interaction": 1955,
+      "legacy_task_binary": 63556
+    }
+  },
+  "direct_only_benchmark_stats": {
+    "interactions": 1955,
+    "legacy_binary_rows": 0,
+    "negatives": 0,
+    "positives": 1955,
+    "sources": {
+      "HARIBOSS": 1238,
+      "R-BIND 2.0": 326,
+      "RNALigands": 391
+    },
+    "task_family": {
+      "direct_interaction": 1955
+    }
+  },
+  "global_entity_stats": {
+    "interactions": 65511,
+    "ligand_entities": 2501,
+    "rna_entities": 1067,
+    "sources": {
+      "Biosensor": 16999,
+      "HARIBOSS": 1238,
+      "R-BIND 2.0": 326,
+      "RNALigands": 391,
+      "ROBIN": 46557
+    }
+  }
+}

@@ -1,0 +1,1365 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "sc": "https://schema.org/"
+  },
+  "@type": "sc:Dataset",
+  "name": "RiboShift",
+  "version": "v1.0",
+  "description": "RiboShift benchmarks RNA-small molecule interaction models under biological and chemical distribution shifts. It includes normalized RNA and ligand entities, provenance-linked interaction records, benchmark views, fixed split assignments, and matched-decoy ranking candidates.",
+  "url": "https://riboshift-anonymous.invalid/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "keywords": [
+    "RNA-ligand interactions",
+    "RNA-targeted drug discovery",
+    "benchmark dataset",
+    "distribution shift",
+    "scaffold split",
+    "dataset curation",
+    "molecular machine learning"
+  ],
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Yawu Zhao"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Zhiyuan Zhao"
+    }
+  ],
+  "includedInDataCatalog": {
+    "@type": "sc:DataCatalog",
+    "name": "NeurIPS 2026 Evaluations and Datasets Track Submission Materials"
+  },
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "interaction_records_parquet",
+      "name": "interaction_records.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/interaction_records.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "7ca77d875f4114311970ae7dcfaf2b7ee4c051ddb9f994d6e38f395fc24b1ea9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "ligand_table_parquet",
+      "name": "ligand_table.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/ligand_table.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "d41d966dd1faaea50117ac66f2ebeba851b42dd90259258687080ab3e896679e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "matched_decoy_candidates_parquet",
+      "name": "matched_decoy_candidates.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/matched_decoy_candidates.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "f037035fb38e8cff584623db3cfe26687de8959ea95afd41e207f42b6083c8ec"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "provenance_records_parquet",
+      "name": "provenance_records.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/provenance_records.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "96c140d8f1c632bbd5dc5a04941d42634e37b61b8c06cd86cacd63921814aac6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "rna_table_parquet",
+      "name": "rna_table.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/rna_table.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "41aede1bf466a8d6bc0eae83669dc11eecb18bb65cd13f452e0d4422cf2c03e7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "source_records_parquet",
+      "name": "source_records.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/source_records.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "f7ef4eea72fc6faa2d1f787245d670f28a9bd7611ef4456a54bf3b03911cc41c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "split_assignments_parquet",
+      "name": "split_assignments.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/split_assignments.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "26af86cb31d1a7e4ecabde684f582c603ccbbedaa498bd6f19fd8901d1cd7387"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "view_annotations_parquet",
+      "name": "view_annotations.parquet",
+      "contentUrl": "https://riboshift-anonymous.invalid/data/tables/view_annotations.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "ea76314aaed5257ee647371651de01fabc5158c7f8933d1c05700ca7a4fa43b6"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "interaction_records",
+      "name": "interaction_records",
+      "description": "RiboShift table interaction_records",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/interaction_id",
+          "name": "interaction_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "interaction_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/evidence_id",
+          "name": "evidence_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "evidence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/rna_id",
+          "name": "rna_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "rna_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/ligand_id",
+          "name": "ligand_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "ligand_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/interaction_label",
+          "name": "interaction_label",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "interaction_label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/support_level",
+          "name": "support_level",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "support_level"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/task_family",
+          "name": "task_family",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "task_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/evidence_tier",
+          "name": "evidence_tier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "evidence_tier"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/label_origin",
+          "name": "label_origin",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "label_origin"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/is_legacy_binary_source",
+          "name": "is_legacy_binary_source",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "is_legacy_binary_source"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "interaction_records/source_database",
+          "name": "source_database",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "interaction_records_parquet"
+            },
+            "extract": {
+              "column": "source_database"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ligand_table",
+      "name": "ligand_table",
+      "description": "RiboShift table ligand_table",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/ligand_id",
+          "name": "ligand_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "ligand_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/canonical_smiles",
+          "name": "canonical_smiles",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "canonical_smiles"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/inchikey",
+          "name": "inchikey",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "inchikey"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/murcko_scaffold",
+          "name": "murcko_scaffold",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "murcko_scaffold"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/mol_wt",
+          "name": "mol_wt",
+          "dataType": "sc:Number",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "mol_wt"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/logp",
+          "name": "logp",
+          "dataType": "sc:Number",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "logp"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/hbd",
+          "name": "hbd",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "hbd"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/hba",
+          "name": "hba",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "hba"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/tpsa",
+          "name": "tpsa",
+          "dataType": "sc:Number",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "tpsa"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ligand_table/ring_count",
+          "name": "ring_count",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "ligand_table_parquet"
+            },
+            "extract": {
+              "column": "ring_count"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "matched_decoy_candidates",
+      "name": "matched_decoy_candidates",
+      "description": "RiboShift table matched_decoy_candidates",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/analysis_view",
+          "name": "analysis_view",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "analysis_view"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/split_name",
+          "name": "split_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/anchor_interaction_id",
+          "name": "anchor_interaction_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "anchor_interaction_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/rna_id",
+          "name": "rna_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "rna_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/positive_ligand_id",
+          "name": "positive_ligand_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "positive_ligand_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/decoy_ligand_id",
+          "name": "decoy_ligand_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "decoy_ligand_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/fold_role",
+          "name": "fold_role",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "fold_role"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/decoy_regime",
+          "name": "decoy_regime",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "decoy_regime"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "matched_decoy_candidates/match_distance",
+          "name": "match_distance",
+          "dataType": "sc:Number",
+          "source": {
+            "fileObject": {
+              "@id": "matched_decoy_candidates_parquet"
+            },
+            "extract": {
+              "column": "match_distance"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "provenance_records",
+      "name": "provenance_records",
+      "description": "RiboShift table provenance_records",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/evidence_id",
+          "name": "evidence_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "evidence_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/source_database",
+          "name": "source_database",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "source_database"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/source_mode",
+          "name": "source_mode",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "source_mode"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/source_asset_path",
+          "name": "source_asset_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "source_asset_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/source_manifest_path",
+          "name": "source_manifest_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "source_manifest_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/source_record_id",
+          "name": "source_record_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "source_record_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/task_family",
+          "name": "task_family",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "task_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/evidence_tier",
+          "name": "evidence_tier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "evidence_tier"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/label_origin",
+          "name": "label_origin",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "label_origin"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/reference",
+          "name": "reference",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "reference"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "provenance_records/year",
+          "name": "year",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "provenance_records_parquet"
+            },
+            "extract": {
+              "column": "year"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "rna_table",
+      "name": "rna_table",
+      "description": "RiboShift table rna_table",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rna_id",
+          "name": "rna_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rna_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rna_sequence",
+          "name": "rna_sequence",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rna_sequence"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rna_structure",
+          "name": "rna_structure",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rna_structure"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rna_type",
+          "name": "rna_type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rna_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rfam_id",
+          "name": "rfam_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rfam_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/rna_cluster_id",
+          "name": "rna_cluster_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "rna_cluster_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/grouping_source",
+          "name": "grouping_source",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "grouping_source"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "rna_table/sequence_length",
+          "name": "sequence_length",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "rna_table_parquet"
+            },
+            "extract": {
+              "column": "sequence_length"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "source_records",
+      "name": "source_records",
+      "description": "RiboShift table source_records",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/ingest_row_id",
+          "name": "ingest_row_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "ingest_row_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/source_database",
+          "name": "source_database",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "source_database"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/source_mode",
+          "name": "source_mode",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "source_mode"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/source_asset_path",
+          "name": "source_asset_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "source_asset_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/source_manifest_path",
+          "name": "source_manifest_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "source_manifest_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/source_record_id",
+          "name": "source_record_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "source_record_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/task_family",
+          "name": "task_family",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "task_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/evidence_tier",
+          "name": "evidence_tier",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "evidence_tier"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/label_origin",
+          "name": "label_origin",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "label_origin"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/rna_repr_raw",
+          "name": "rna_repr_raw",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "rna_repr_raw"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/rna_sequence",
+          "name": "rna_sequence",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "rna_sequence"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/rna_structure_raw",
+          "name": "rna_structure_raw",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "rna_structure_raw"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/ligand_repr_raw",
+          "name": "ligand_repr_raw",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "ligand_repr_raw"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/canonical_smiles",
+          "name": "canonical_smiles",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "canonical_smiles"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/label_raw",
+          "name": "label_raw",
+          "dataType": "sc:Number",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "label_raw"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/reference",
+          "name": "reference",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "reference"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/year",
+          "name": "year",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "year"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "source_records/config_source_name",
+          "name": "config_source_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "source_records_parquet"
+            },
+            "extract": {
+              "column": "config_source_name"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "split_assignments",
+      "name": "split_assignments",
+      "description": "RiboShift table split_assignments",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/interaction_id",
+          "name": "interaction_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "interaction_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/analysis_view",
+          "name": "analysis_view",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "analysis_view"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/split_name",
+          "name": "split_name",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/fold_role",
+          "name": "fold_role",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "fold_role"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/seed",
+          "name": "seed",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "seed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/rna_group_id",
+          "name": "rna_group_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "rna_group_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/ligand_group_id",
+          "name": "ligand_group_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "ligand_group_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/task_family",
+          "name": "task_family",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "task_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "split_assignments/interaction_label",
+          "name": "interaction_label",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "split_assignments_parquet"
+            },
+            "extract": {
+              "column": "interaction_label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "view_annotations",
+      "name": "view_annotations",
+      "description": "RiboShift table view_annotations",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "view_annotations/analysis_view",
+          "name": "analysis_view",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "view_annotations_parquet"
+            },
+            "extract": {
+              "column": "analysis_view"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "view_annotations/interaction_id",
+          "name": "interaction_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "view_annotations_parquet"
+            },
+            "extract": {
+              "column": "interaction_id"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variableMeasured": [
+    {
+      "@type": "sc:PropertyValue",
+      "name": "rna_id"
+    },
+    {
+      "@type": "sc:PropertyValue",
+      "name": "ligand_id"
+    },
+    {
+      "@type": "sc:PropertyValue",
+      "name": "interaction_label"
+    },
+    {
+      "@type": "sc:PropertyValue",
+      "name": "analysis_view"
+    },
+    {
+      "@type": "sc:PropertyValue",
+      "name": "split_name"
+    },
+    {
+      "@type": "sc:PropertyValue",
+      "name": "candidate_group_id"
+    }
+  ],
+  "measurementTechnique": [
+    "dataset curation",
+    "entity normalization",
+    "matched-decoy generation",
+    "leakage-aware split construction"
+  ],
+  "isAccessibleForFree": true,
+  "conditionsOfAccess": "RiboShift tables are released as normalized benchmark artifacts; upstream source assets remain subject to their original terms.",
+  "usageInfo": "The main cross-model comparison uses the direct_only view with matched-decoy ranking.",
+  "citation": "RiboShift: Benchmarking RNA-small molecule interaction models under biological and chemical distribution shifts.",
+  "rai:annotation": {
+    "@type": "rai:Annotation",
+    "rai:content": {
+      "intendedUse": "Evaluation of RNA-small molecule interaction models under controlled biological and chemical novelty settings.",
+      "limitations": [
+        "The direct-only view is modest in size and strongly long-tailed.",
+        "RNA grouping falls back to cluster90 proxies when Rfam coverage is unavailable.",
+        "Matched decoys are generated candidates rather than experimentally validated negatives.",
+        "No unified disease or function taxonomy is available across all direct-evidence sources."
+      ],
+      "dataCollection": "Integrated from HARIBOSS, RNALigands, R-BIND 2.0, ROBIN, and Biosensor after normalization and provenance tracking.",
+      "sensitiveData": "The released benchmark tables contain no direct personal data.",
+      "gapsAndBiases": [
+        "The direct_only benchmark view is small and long-tailed.",
+        "RNA family coverage is incomplete and may rely on cluster90 proxies.",
+        "Generated decoys are not experimentally validated negatives.",
+        "Disease and functional taxonomy coverage is not standardized across sources."
+      ],
+      "maintenance": "RiboShift releases are immutable benchmark snapshots. Source additions, normalization-rule changes, and split-policy changes require a new release version.",
+      "primaryView": "direct_only",
+      "excludedPrimarySettings": [
+        "all_sources/dual_cold"
+      ],
+      "globalEntityStats": {
+        "interactions": 65511,
+        "ligand_entities": 2501,
+        "rna_entities": 1067,
+        "sources": {
+          "Biosensor": 16999,
+          "HARIBOSS": 1238,
+          "R-BIND 2.0": 326,
+          "RNALigands": 391,
+          "ROBIN": 46557
+        }
+      },
+      "directOnlyStats": {
+        "interactions": 1955,
+        "legacy_binary_rows": 0,
+        "negatives": 0,
+        "positives": 1955,
+        "sources": {
+          "HARIBOSS": 1238,
+          "R-BIND 2.0": 326,
+          "RNALigands": 391
+        },
+        "task_family": {
+          "direct_interaction": 1955
+        }
+      },
+      "allSourcesStats": {
+        "interactions": 65511,
+        "legacy_binary_rows": 63556,
+        "negatives": 58515,
+        "positives": 6996,
+        "sources": {
+          "Biosensor": 16999,
+          "HARIBOSS": 1238,
+          "R-BIND 2.0": 326,
+          "RNALigands": 391,
+          "ROBIN": 46557
+        },
+        "task_family": {
+          "direct_interaction": 1955,
+          "legacy_task_binary": 63556
+        }
+      }
+    }
+  }
+}

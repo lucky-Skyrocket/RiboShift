@@ -1,0 +1,18 @@
+{
+  "columns": [
+    "evidence_id",
+    "source_database",
+    "source_mode",
+    "source_asset_path",
+    "source_manifest_path",
+    "source_record_id",
+    "task_family",
+    "evidence_tier",
+    "label_origin",
+    "reference",
+    "year"
+  ],
+  "name": "provenance_records",
+  "path": "data/tables/provenance_records.parquet",
+  "rows": 65511
+}

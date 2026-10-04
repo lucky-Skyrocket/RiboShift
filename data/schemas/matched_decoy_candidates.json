@@ -1,0 +1,16 @@
+{
+  "columns": [
+    "analysis_view",
+    "split_name",
+    "anchor_interaction_id",
+    "rna_id",
+    "positive_ligand_id",
+    "decoy_ligand_id",
+    "fold_role",
+    "decoy_regime",
+    "match_distance"
+  ],
+  "name": "matched_decoy_candidates",
+  "path": "data/tables/matched_decoy_candidates.parquet",
+  "rows": 38100
+}

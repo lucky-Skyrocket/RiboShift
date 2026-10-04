@@ -1,0 +1,17 @@
+{
+  "columns": [
+    "ligand_id",
+    "canonical_smiles",
+    "inchikey",
+    "murcko_scaffold",
+    "mol_wt",
+    "logp",
+    "hbd",
+    "hba",
+    "tpsa",
+    "ring_count"
+  ],
+  "name": "ligand_table",
+  "path": "data/tables/ligand_table.parquet",
+  "rows": 2501
+}

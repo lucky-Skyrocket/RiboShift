@@ -1,0 +1,61 @@
+{
+  "benchmark_name": "RiboShift",
+  "release_version": "v1.0",
+  "analysis_views": [
+    "direct_only",
+    "all_sources"
+  ],
+  "primary_benchmark_view": "direct_only",
+  "primary_eval_regime": "matched_decoy_ranking",
+  "versioning_policy": "RiboShift releases are immutable benchmark snapshots. Source additions, normalization-rule changes, and split-policy changes require a new release version.",
+  "redistribution_scope": "Normalized benchmark tables, split assignments, matched-decoy candidates, schemas, summaries, and metadata generated for RiboShift.",
+  "documentation_files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE_NOTICE.md",
+    "report/1_benchmark_construction.md",
+    "data/schemas/*.json",
+    "data/metadata/*.json"
+  ],
+  "croissant_metadata": {
+    "included_in_submission_materials": true,
+    "upload_path": "../riboshift_croissant_upload/riboshift_croissant.json",
+    "notes": "Croissant metadata is distributed as a separate upload package."
+  },
+  "responsible_ai": {
+    "intended_use": "Evaluation of RNA-small molecule interaction models under controlled biological and chemical novelty settings.",
+    "usage_info": "The main cross-model comparison uses the direct_only view with matched-decoy ranking.",
+    "conditions_of_access": "RiboShift tables are released as normalized benchmark artifacts; upstream source assets remain subject to their original terms.",
+    "maintenance": "RiboShift releases are immutable benchmark snapshots. Source additions, normalization-rule changes, and split-policy changes require a new release version.",
+    "sensitive_data": "The released benchmark tables contain no direct personal data.",
+    "gaps_and_biases": [
+      "The direct_only benchmark view is small and long-tailed.",
+      "RNA family coverage is incomplete and may rely on cluster90 proxies.",
+      "Generated decoys are not experimentally validated negatives.",
+      "Disease and functional taxonomy coverage is not standardized across sources."
+    ]
+  },
+  "licensing": {
+    "benchmark_artifact_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "benchmark_artifact_license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "benchmark_artifact_license_scope": "Applies to newly created RiboShift benchmark artifacts: normalized benchmark tables, split assignments, matched-decoy candidates, schemas, summaries, metadata, and benchmark-specific documentation.",
+    "upstream_source_constraints": "Upstream source datasets remain subject to their original licenses, terms of use, and attribution requirements."
+  },
+  "public_archival_plan": {
+    "planned": true,
+    "archive_type": "DOI-backed archival repository",
+    "timing": "at public release"
+  },
+  "excluded_primary_settings": [
+    "all_sources/dual_cold"
+  ],
+  "known_limitations": [
+    "The direct_only view is modest in size and strongly long-tailed.",
+    "RNA grouping falls back to cluster90 proxies when Rfam coverage is unavailable.",
+    "Matched decoys are generated candidates rather than experimentally validated negatives.",
+    "No unified disease or function taxonomy is available across all direct-evidence sources."
+  ],
+  "metadata_directory": "data/metadata",
+  "table_directory": "data/tables",
+  "schema_directory": "data/schemas"
+}

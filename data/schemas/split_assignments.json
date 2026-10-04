@@ -1,0 +1,16 @@
+{
+  "columns": [
+    "interaction_id",
+    "analysis_view",
+    "split_name",
+    "fold_role",
+    "seed",
+    "rna_group_id",
+    "ligand_group_id",
+    "task_family",
+    "interaction_label"
+  ],
+  "name": "split_assignments",
+  "path": "data/tables/split_assignments.parquet",
+  "rows": 204353
+}

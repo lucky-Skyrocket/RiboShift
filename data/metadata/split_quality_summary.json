@@ -1,0 +1,118 @@
+{
+  "all_sources": {
+    "dual_cold": {
+      "decoys": 0,
+      "fold_counts": {
+        "test": 122,
+        "train": 65267,
+        "valid": 122
+      },
+      "issues": [
+        "valid direct_decoy_groups 122 below min_eval_direct_decoy_groups_per_fold=150",
+        "test direct_decoy_groups 122 below min_eval_direct_decoy_groups_per_fold=150"
+      ],
+      "rows": 65511,
+      "status": "unsupported",
+      "task_family": {
+        "direct_interaction": 1955,
+        "legacy_task_binary": 63556
+      }
+    },
+    "family_shift": {
+      "decoys": 12470,
+      "fold_counts": {
+        "test": 6551,
+        "train": 52409,
+        "valid": 6551
+      },
+      "rows": 65511,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955,
+        "legacy_task_binary": 63556
+      }
+    },
+    "random": {
+      "decoys": 3910,
+      "fold_counts": {
+        "test": 6550,
+        "train": 52409,
+        "valid": 6552
+      },
+      "rows": 65511,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955,
+        "legacy_task_binary": 63556
+      }
+    },
+    "scaffold_shift": {
+      "decoys": 6080,
+      "fold_counts": {
+        "test": 6551,
+        "train": 52409,
+        "valid": 6551
+      },
+      "rows": 65511,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955,
+        "legacy_task_binary": 63556
+      }
+    }
+  },
+  "direct_only": {
+    "dual_cold": {
+      "decoys": 3910,
+      "fold_counts": {
+        "test": 195,
+        "train": 1564,
+        "valid": 196
+      },
+      "rows": 1955,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955
+      }
+    },
+    "family_shift": {
+      "decoys": 3910,
+      "fold_counts": {
+        "test": 195,
+        "train": 1564,
+        "valid": 196
+      },
+      "rows": 1955,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955
+      }
+    },
+    "random": {
+      "decoys": 3910,
+      "fold_counts": {
+        "test": 195,
+        "train": 1564,
+        "valid": 196
+      },
+      "rows": 1955,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955
+      }
+    },
+    "scaffold_shift": {
+      "decoys": 3910,
+      "fold_counts": {
+        "test": 195,
+        "train": 1564,
+        "valid": 196
+      },
+      "rows": 1955,
+      "status": "ok",
+      "task_family": {
+        "direct_interaction": 1955
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "columns": [
+    "ingest_row_id",
+    "source_database",
+    "source_mode",
+    "source_asset_path",
+    "source_manifest_path",
+    "source_record_id",
+    "task_family",
+    "evidence_tier",
+    "label_origin",
+    "rna_repr_raw",
+    "rna_sequence",
+    "rna_structure_raw",
+    "ligand_repr_raw",
+    "canonical_smiles",
+    "label_raw",
+    "reference",
+    "year",
+    "config_source_name"
+  ],
+  "name": "source_records",
+  "path": "data/tables/source_records.parquet",
+  "rows": 67545
+}
